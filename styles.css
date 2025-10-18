@@ -248,3 +248,11 @@ footer.site-footer{padding:20px 0;text-align:center;color:var(--muted);font-size
 /* remove bullets if nav used lists */
 #main-nav, #main-nav ul { list-style: none !important; margin: 0 !important; padding: 0 !important; }
 
+.project-card img {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
