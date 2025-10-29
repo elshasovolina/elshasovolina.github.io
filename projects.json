@@ -17,5 +17,6 @@
     "methodology": "ETL with SQL and Python, data aggregation, and dashboard creation using Tableau Public.",
     "result": "Delivered an interactive dashboard improving management decision speed by 40%.",
     "pdf": "assets/banking_dashboard.pdf"
+   }
   }
 }
