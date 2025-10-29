@@ -133,11 +133,12 @@
 
       <!-- Tableau section -->
       <section id="project-tableau" style="margin-top:40px;">
-  <h3>Interactive Tableau Dashboard</h3>
-  <div id="tableauVizContainer" style="width:100%;height:700px;background:#f9f9f9;text-align:center;display:flex;align-items:center;justify-content:center;">
-    <span id="loading-text">Loading dashboard...</span>
-  </div>
+      <h3>Interactive Tableau Dashboard</h3>
+      <div id="tableauVizContainer" style="width:100%;height:700px;background:#f9f9f9;text-align:center;display:flex;align-items:center;justify-content:center;">
+        <span id="loading-text">Loading dashboard...</span>
+      </div>
 </section>
+
 
   </main>
 
@@ -152,63 +153,64 @@
 document.addEventListener("DOMContentLoaded", async function () {
   const params = new URLSearchParams(window.location.search);
   const name = params.get("name");
+  console.log("🔍 Project name:", name);
 
-  // Load JSON
-  const res = await fetch("projects.json");
-  const data = await res.json();
-  const p = data[name];
+  try {
+    const res = await fetch("projects.json");
+    const data = await res.json();
+    const p = data[name];
+    if (!p) {
+      document.getElementById("project-tableau").innerHTML = "<p>Project not found.</p>";
+      return;
+    }
 
-  if (!p) {
-    document.getElementById("project-content").innerHTML = "<p>Project not found.</p>";
-    return;
-  }
+    console.log("✅ Loaded project:", p);
 
-  console.log("✅ Loaded project:", p);
+    // Populate basic project info
+    document.getElementById("project-title").textContent = p.title;
+    document.getElementById("project-background").textContent = p.background;
+    document.getElementById("project-objective").textContent = p.objective;
+    document.getElementById("project-methodology").textContent = p.methodology;
+    document.getElementById("project-result").textContent = p.result;
 
-  // --- Fill Text Fields ---
-  document.getElementById("project-title").textContent = p.title;
-  document.getElementById("project-background").textContent = p.background;
-  document.getElementById("project-objective").textContent = p.objective;
-  document.getElementById("project-methodology").textContent = p.methodology;
-  document.getElementById("project-result").textContent = p.result;
+    // Add PDF
+    if (p.pdf) {
+      const pdfSection = document.getElementById("project-pdf");
+      pdfSection.innerHTML = `
+        <h3>Project Report</h3>
+        <a href="${p.pdf}" target="_blank" class="btn primary">📄 View Full Report (PDF)</a>
+        <iframe src="${p.pdf}" style="width:100%;height:600px;margin-top:16px;border:1px solid #ddd;border-radius:8px;"></iframe>
+      `;
+    }
 
-  // --- PDF Section ---
-  if (p.pdf) {
-    const pdfSection = document.getElementById("project-pdf");
-    pdfSection.innerHTML = `
-      <h3>Project Report</h3>
-      <a href="${p.pdf}" target="_blank" rel="noopener" class="btn primary">📄 View Full Report (PDF)</a>
-      <iframe src="${p.pdf}" class="pdf-embed" style="width:100%;height:600px;margin-top:16px;border:1px solid #ddd;border-radius:8px;"></iframe>
-    `;
-  }
+    // Embed Tableau
+    if (p.tableau) {
+      const url = p.tableau;
+      const containerDiv = document.getElementById("tableauVizContainer");
+      const loadingText = document.getElementById("loading-text");
 
-  // --- Tableau Section ---
-  if (p.tableau) {
-    const containerDiv = document.getElementById("tableauVizContainer");
-    const loadingText = document.getElementById("loading-text");
-    const url = typeof p.tableau === "string" ? p.tableau : `${p.tableau.host}${p.tableau.path}`;
+      console.log("🎯 Tableau URL:", url);
 
-    console.log("🎯 Tableau URL:", url);
-
-    try {
       const options = {
         hideTabs: true,
         hideToolbar: false,
         width: "100%",
         height: "700px",
         onFirstInteractive: function () {
-          console.log("✅ Tableau Viz Loaded");
+          console.log("✅ Tableau Viz Loaded!");
           loadingText.style.display = "none";
           containerDiv.style.background = "transparent";
         }
       };
+
       new tableau.Viz(containerDiv, url, options);
-    } catch (err) {
-      console.error("❌ Tableau Embed Error:", err);
-      loadingText.textContent = "Failed to load dashboard.";
+    } else {
+      console.warn("⚠️ No Tableau URL found for this project.");
+      document.getElementById("project-tableau").style.display = "none";
     }
-  } else {
-    document.getElementById("project-tableau").style.display = "none";
+  } catch (err) {
+    console.error("❌ Error loading project:", err);
+    document.getElementById("project-tableau").innerHTML = "<p>Error loading data.</p>";
   }
 });
 </script>

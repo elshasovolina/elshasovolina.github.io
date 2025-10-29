@@ -6,10 +6,7 @@
     "methodology": "Created 8 actionable recommendations—5 for improving customer retention (including a loyalty program aimed at boosting repeat purchases by 10% in 6 months) and 3 for increasing average basket size through targeted promotions and upselling techniques. Cleaned and normalized transaction data to improve analysis accuracy and visualized findings using Tableau, creating an interactive dashboard with summary cards and various chart models.",
     "result": "Enabled data-driven discussions that identified critical opportunities for customer retention and informed marketing strategies.",
     "pdf": "assets/shopamore.pdf",
-    "tableau": {
-      "host": "https://public.tableau.com/",
-      "path": "views/DEEPPTableau_17579548821260/ShopamoreSalesDashboard?:showVizHome=no&embed=true"
-      }
+    "tableau": "https://public.tableau.com/views/DEEPPTableau_17579548821260/ShopamoreSalesDashboard?:showVizHome=no&embed=true"
     },
   "banking_dashboard": {
     "title": "Banking Tableau Dashboard",
