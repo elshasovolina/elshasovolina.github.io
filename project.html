@@ -171,18 +171,40 @@
       }
 
       // Tableau embed
-      if (p.tableau) {
-        // Extract URL and embed
-        const tableauEmbed = p.tableau.includes("public.tableau.com")
-          ? `<iframe src="${p.tableau.replace('public.tableau.com/views', 'public.tableau.com/views')}:showVizHome=no&embed=true"
-                     class="tableau-embed"></iframe>`
-          : `<iframe src="${p.tableau}" class="tableau-embed"></iframe>`;
+    // Tableau embed (safe dynamic execution)
+if (p.tableau) {
+  const div = document.createElement("div");
+  div.id = "tableauViz";
+  div.className = "tableauPlaceholder";
+  div.style.position = "relative";
+  div.innerHTML = `
+    <noscript><a href="#"><img alt="${p.title}" style="border:none" /></a></noscript>
+    <object class="tableauViz" style="display:none;">
+      <param name="host_url" value="${encodeURIComponent(p.tableau.host)}" />
+      <param name="embed_code_version" value="3" />
+      <param name="site_root" value="" />
+      <param name="name" value="${p.tableau.path}" />
+      <param name="tabs" value="no" />
+      <param name="toolbar" value="yes" />
+      <param name="animate_transition" value="yes" />
+      <param name="display_static_image" value="yes" />
+      <param name="display_spinner" value="yes" />
+      <param name="display_overlay" value="yes" />
+      <param name="display_count" value="yes" />
+      <param name="language" value="en-US" />
+    </object>
+  `;
+  document.getElementById("project-tableau").appendChild(div);
 
-        document.getElementById("project-tableau").innerHTML = `
-          <a href="${p.tableau}" target="_blank" rel="noopener" class="btn secondary">📊 Open Tableau in New Tab</a>
-          ${tableauEmbed}
-        `;
-      }
+  // Load Tableau script AFTER adding HTML
+  const script = document.createElement("script");
+  script.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+  script.onload = function () {
+    console.log("Tableau viz loaded");
+  };
+  document.body.appendChild(script);
+}
+
     }
 
     document.getElementById("year").textContent = new Date().getFullYear();
