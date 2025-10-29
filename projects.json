@@ -9,7 +9,8 @@
     "tableau": {
       "host": "https://public.tableau.com/",
       "path": "views/DEEPPTableau_17579548821260/ShopamoreSalesDashboard?:showVizHome=no&embed=true"
-      },
+      }
+    },
   "banking_dashboard": {
     "title": "Banking Tableau Dashboard",
     "background": "A visualization project exploring customer banking behavior from transaction datasets.",
@@ -18,5 +19,4 @@
     "result": "Delivered an interactive dashboard improving management decision speed by 40%.",
     "pdf": "assets/banking_dashboard.pdf"
    }
-  }
 }
