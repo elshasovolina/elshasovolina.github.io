@@ -143,66 +143,66 @@
   </footer>
 
   <script>
-async function loadProject() {
-  const params = new URLSearchParams(window.location.search);
-  const name = params.get("name");
-  const res = await fetch("projects.json");
-  const data = await res.json();
-  const p = data[name];
+    async function loadProject() {
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+    const res = await fetch("projects.json");
+    const data = await res.json();
+    const p = data[name];
 
-  if (!p) {
-    document.getElementById("project-content").innerHTML = "<p>Project not found.</p>";
-    return;
-  }
+    if (!p) {
+      document.getElementById("project-content").innerHTML = "<p>Project not found.</p>";
+      return;
+    }
 
-  // Fill basic info
-  document.getElementById("project-title").textContent = p.title;
-  document.getElementById("project-background").textContent = p.background;
-  document.getElementById("project-objective").textContent = p.objective;
-  document.getElementById("project-methodology").textContent = p.methodology;
-  document.getElementById("project-result").textContent = p.result;
+    // Fill basic info
+    document.getElementById("project-title").textContent = p.title;
+    document.getElementById("project-background").textContent = p.background;
+    document.getElementById("project-objective").textContent = p.objective;
+    document.getElementById("project-methodology").textContent = p.methodology;
+    document.getElementById("project-result").textContent = p.result;
 
-  // PDF section
-  if (p.pdf) {
-    document.getElementById("project-pdf").innerHTML = `
-      <a href="${p.pdf}" target="_blank" rel="noopener" class="btn primary">📄 View Full Report (PDF)</a>
-      <iframe src="${p.pdf}" class="pdf-embed"></iframe>
-    `;
-  }
+    // PDF section
+    if (p.pdf) {
+      document.getElementById("project-pdf").innerHTML = `
+        <a href="${p.pdf}" target="_blank" rel="noopener" class="btn primary">📄 View Full Report (PDF)</a>
+        <iframe src="${p.pdf}" class="pdf-embed"></iframe>
+      `;
+    }
 
-  // Tableau section (using API)
-  if (p.tableau) {
-    document.getElementById("project-tableau").innerHTML = `
-      <h3>Interactive Tableau Dashboard</h3>
-      <div id="tableauVizContainer" style="width:100%;height:700px;margin-top:20px;"></div>
-    `;
+    // Tableau section (using API)
+    if (p.tableau) {
+      document.getElementById("project-tableau").innerHTML = `
+        <h3>Interactive Tableau Dashboard</h3>
+        <div id="tableauVizContainer" style="width:100%;height:700px;margin-top:20px;"></div>
+      `;
 
-    // Load Tableau script if not already loaded
-    if (!window.tableau) {
-      const script = document.createElement("script");
-      script.src = "https://public.tableau.com/javascripts/api/tableau-2.min.js";
-      script.onload = () => initTableau(p.tableau);
-      document.body.appendChild(script);
-    } else {
-      initTableau(p.tableau);
+      // Load Tableau script if not already loaded
+      if (!window.tableau) {
+        const script = document.createElement("script");
+        script.src = "https://public.tableau.com/javascripts/api/tableau-2.min.js";
+        script.onload = () => initTableau(p.tableau);
+        document.body.appendChild(script);
+      } else {
+        initTableau(p.tableau);
+      }
     }
   }
-}
 
-function initTableau(tbl) {
-  const containerDiv = document.getElementById("tableauVizContainer");
-  const url = `${tbl.host}${tbl.path}`;
-  const options = {
-    hideTabs: true,
-    hideToolbar: false,
-    width: "100%",
-    height: "700px"
-  };
-  new tableau.Viz(containerDiv, url, options);
-}
+  function initTableau(tbl) {
+    const containerDiv = document.getElementById("tableauVizContainer");
+    const url = `${tbl.host}${tbl.path}`;
+    const options = {
+      hideTabs: true,
+      hideToolbar: false,
+      width: "100%",
+      height: "700px"
+    };
+    new tableau.Viz(containerDiv, url, options);
+  }
 
-document.getElementById("year").textContent = new Date().getFullYear();
-loadProject();
+  document.getElementById("year").textContent = new Date().getFullYear();
+  loadProject();
 </script>
 
 </body>

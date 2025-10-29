@@ -8,7 +8,7 @@
     "pdf": "assets/shopamore.pdf",
     "tableau": {
       "host": "https://public.tableau.com/",
-      "path": "views/DEEPPTableau_17579548821260/ShopamoreSalesDashboard"
+      "path": "views/DEEPPTableau_17579548821260/ShopamoreSalesDashboard?:showVizHome=no&embed=true"
       },
   "banking_dashboard": {
     "title": "Banking Tableau Dashboard",
