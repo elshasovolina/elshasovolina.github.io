@@ -256,3 +256,7 @@ footer.site-footer{padding:20px 0;text-align:center;color:var(--muted);font-size
   transform: scale(1.03);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
+.hero p {
+  text-align: justify;
+  text-justify: inter-word; /* better spacing between words */
+}
