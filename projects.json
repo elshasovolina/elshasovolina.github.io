@@ -4,7 +4,7 @@
     "background": "Analyzed data and consumer behavior to understand key buyer retention metrics, revealing a decline in retention rates ranging from a peak of 18.2% in February to a low of 1.8%, necessitating a focus on cohort-specific retention rates for effective marketing initiatives.",
     "objective": "Develop actionable recommendations to enhance customer retention and increase average basket size.",
     "methodology": "Created 8 actionable recommendations—5 for improving customer retention (including a loyalty program aimed at boosting repeat purchases by 10% in 6 months) and 3 for increasing average basket size through targeted promotions and upselling techniques. Cleaned and normalized transaction data to improve analysis accuracy and visualized findings using Tableau, creating an interactive dashboard with summary cards and various chart models.",
-    "result": "Enabled data-driven discussions that identified critical opportunities for customer retention and informed marketing strategies.",
+    "result": "Focus on how to make first time buyer and single-time buyer to become repeat buyer and growing members than growing basket size per order, since average orders already multi-items.",
     "pdf": "assets/shopamore.pdf",
     "tableau": "https://public.tableau.com/views/DEEPPTableau_17579548821260/ShopamoreSalesDashboard?:showVizHome=no&embed=true"
     },
