@@ -14,8 +14,7 @@
   "objective": "To identify sales trends, measure customer retention performance, and provide actionable recommendations to improve customer engagement and long-term revenue.",
   "methodology": "Utilized SQL for data extraction and cohort analysis on BigQuery’s public dataset (`bigquery-public-data.thelook_ecommerce`). Focused on monthly inventory growth and retention cohorts between 2021–2023. Developed analytical dashboards and supporting calculations in Google Sheets and Tableau.",
   "result": "Revealed a downward trend in product growth across most categories after Q1 2023 and consistently low retention rates between 0.3%–4.6%. Insights led to recommendations such as improving customer engagement programs, optimizing product listings, and enhancing user experience to boost retention and sales performance.",
-  "pdf": "assets/TheLook.pdf",
-  "tableau": "https://public.tableau.com/views/TheLookEcommerceDashboard?:showVizHome=no&embed=true"
+  "pdf": "assets/TheLook.pdf"
 },
 "steam": {
   "title": "STEAM Game Market Analysis",
