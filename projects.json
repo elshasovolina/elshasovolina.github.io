@@ -8,12 +8,24 @@
     "pdf": "assets/shopamore.pdf",
     "tableau": "https://public.tableau.com/views/DEEPPTableau_17579548821260/ShopamoreSalesDashboard?:showVizHome=no&embed=true"
     },
-  "banking_dashboard": {
-    "title": "Banking Tableau Dashboard",
-    "background": "A visualization project exploring customer banking behavior from transaction datasets.",
-    "objective": "To provide management with real-time visibility into transaction volumes and product usage.",
-    "methodology": "ETL with SQL and Python, data aggregation, and dashboard creation using Tableau Public.",
-    "result": "Delivered an interactive dashboard improving management decision speed by 40%.",
-    "pdf": "assets/banking_dashboard.pdf"
-   }
+  "thelook": {
+  "title": "TheLook E-Commerce Sales Performance Analysis",
+  "background": "TheLook is a fictional e-commerce clothing company dataset created by the Looker team for analytical purposes. The project aims to analyze customer purchasing behavior, product category growth, and retention rates using BigQuery public data.",
+  "objective": "To identify sales trends, measure customer retention performance, and provide actionable recommendations to improve customer engagement and long-term revenue.",
+  "methodology": "Utilized SQL for data extraction and cohort analysis on BigQuery’s public dataset (`bigquery-public-data.thelook_ecommerce`). Focused on monthly inventory growth and retention cohorts between 2021–2023. Developed analytical dashboards and supporting calculations in Google Sheets and Tableau.",
+  "result": "Revealed a downward trend in product growth across most categories after Q1 2023 and consistently low retention rates between 0.3%–4.6%. Insights led to recommendations such as improving customer engagement programs, optimizing product listings, and enhancing user experience to boost retention and sales performance.",
+  "pdf": "assets/TheLook.pdf",
+  "tableau": "https://public.tableau.com/views/TheLookEcommerceDashboard?:showVizHome=no&embed=true"
+},
+"steam": {
+  "title": "STEAM Game Market Analysis",
+  "background": "This project analyzes the STEAM games dataset to uncover patterns in game releases, user ratings, platform distribution, and market behavior. The dataset includes metadata, user reviews, and product details from STEAM’s public database for educational purposes.",
+  "objective": "To help the platform make data-driven strategic decisions in product development, marketing, and customer engagement to expand market share and profitability.",
+  "methodology": "Conducted exploratory data analysis using Python, SQL, and Tableau. Built dashboards visualizing game release patterns, rating distributions, regional engagement, and platform support. Identified correlations between positive reviews, engagement, and pricing strategies.",
+  "result": "Found that game releases peak between March–May each year, with most titles rated 'Very Positive' or 'Positive'. Windows dominates platform support, while Linux has minimal coverage. Provided actionable recommendations such as promoting underexposed high-rated games, localizing campaigns by region, and expanding platform availability to reach niche audiences.",
+  "pdf": "assets/STEAM.pdf",
+  "tableau": "https://public.tableau.com/shared/NGWFKQXH4?:showVizHome=no&embed=true"
+}
+
+
 }

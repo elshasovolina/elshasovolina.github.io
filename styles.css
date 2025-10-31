@@ -256,7 +256,46 @@ footer.site-footer{padding:20px 0;text-align:center;color:var(--muted);font-size
   transform: scale(1.03);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
-.hero p {
+p {
   text-align: justify;
-  text-justify: inter-word; /* better spacing between words */
+  text-justify: inter-word;
+  max-width: 900px;   /* keeps paragraphs readable */
+  margin-left: auto;
+  margin-right: auto;
+}
+/* ===== Certification Section ===== */
+.certification {
+  padding: 60px 0;
+  background: var(--bg);
+  text-align: center;
+}
+
+.certification-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.certification-card {
+  max-width: 800px; /* limits image width for large screens */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.certification-card h4 {
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.certification-card img {
+  display: block;
+  width: 100%;
+  height: auto; /* keeps aspect ratio */
+  border-radius: 12px;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }

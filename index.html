@@ -15,11 +15,12 @@
       <a class="brand" href="#hero">Elsha Sovolina</a>
       <button id="nav-toggle" aria-label="Open navigation">☰</button>
       <nav id="main-nav" class="nav">
-        <a href="#about">About</a>
+        <a href="#hero">About</a>
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#hero">Contact</a>
+        <a href="#certification">certification</a>
         <!-- Header Download CV button (robust & accessible) -->
 <a class="btn header-cv-btn" href="assets/resume.pdf" target="_blank" rel="noopener"
    aria-label="Download CV" data-text="Download CV">
@@ -38,13 +39,9 @@
           <h1>Elsha Sovolina</h1>
           <p class="subtitle">Programmer · Analyst · Data Engineer / Fullstack Developer</p>
           <p>
-            Detail-oriented Data Engineer & Analytics professional with 19 years building enterprise systems,
-            ETL pipelines, and reporting tools. Skilled in SQL, Python, Laravel, .NET, BigQuery, Tableau, and Power BI. 
-            I have a long history of designing and maintaining backend systems for plantation & finance domains,
-            building ETL pipelines and automating reports. Recently completed RevoU Data Analyst Bootcamp (SQL, Python, Tableau, Power BI).
-
+            I am a detail-oriented Data Engineer and Analytics professional with 19 years of experience, including developing ETL pipelines that migrated data from MySQL to Oracle through Delphi. My career has focused on building enterprise systems that streamline reporting processes, particularly in the plantation and finance sectors. Having recently completed the RevoU Data Analyst Bootcamp, I am eager to leverage my extensive experience and passion for data to deliver impactful solutions. I thrive on turning complex data challenges into strategic opportunities, and I look forward to contributing to a dynamic team that values data-driven decision-making.
           </p>
-          <p class="cta-row">
+          <p class="cta-row" id = "contact">
             <a class="btn primary" href="resume.html" target="_blank" rel="noopener">View CV</a>
             <a class="btn" href="mailto:elsha.sovolina@gmail.com">Contact</a>
           </p>
@@ -163,7 +160,7 @@
         <h2>Data Related Projects</h2>
         <div class="projects-grid">
           <div class="project-card">
-            <h4>ShopAmore Analytics Report</h4>
+            <h4>ShopAmore, Sales go down for a quarter!</h4>
               <a href="project.html?name=shopamore">
                 <img src="assets/shopamore-thumb.jpg" alt="ShopAmore project thumbnail"
                     style="width:100%; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.1); margin-bottom:8px;">
@@ -173,8 +170,24 @@
               </p>
           </div>
           <div class="project-card">
-            <h4>Public Tableau Dashboards</h4>
-            <p>Banking & Steam dashboards — <a href="https://public.tableau.com/shared/9FBM5GWHX" target="_blank">View</a> • <a href="https://public.tableau.com/shared/NGWFKQXH4" target="_blank">View</a></p>
+            <h4>The Look - Stock is gone? </h4>
+              <a href="project.html?name=thelook">
+                <img src="assets/thelook-thumb.jpg" alt="The Look project thumbnail"
+                    style="width:100%; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.1); margin-bottom:8px;">
+              </a>
+              <p>(2025) — Analytical report and dashboard insights for <strong>The Look</strong> Online Mall dataset.
+                <a href="project.html?name=thelook">Read more</a>
+              </p>
+          </div>
+          <div class="project-card">
+            <h4>STEAM - What game next? </h4>
+              <a href="project.html?name=steam">
+                <img src="assets/steam-thumb.jpg" alt="STEAM project thumbnail"
+                    style="width:100%; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.1); margin-bottom:8px;">
+              </a>
+              <p>(2025) — Analytical report and dashboard insights for <strong>STEAM</strong> Game platform dataset.
+                <a href="project.html?name=steam">Read more</a>
+              </p>
           </div>
         </div>
       </div>
@@ -199,6 +212,16 @@
         </div>
       </div>
     </section>
+
+   <section id="certification" class="certification">
+  <div class="container certification-grid">
+    <div class="certification-card">
+      <h4>RevoU Full Stack Data Analysis</h4>
+      <img src="assets/revou_certificate.jpg" alt="Certificate RevoU">
+    </div>
+  </div>
+</section>
+
   </main>
 
   <footer class="site-footer">
