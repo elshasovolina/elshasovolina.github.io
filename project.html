@@ -8,7 +8,7 @@
   <!-- Fonts & main stylesheet -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+
   <style>
     :root {
       --accent: #0f62fe;
@@ -148,7 +148,7 @@
     </div>
   </footer>
 
- <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+
 <script>
 document.addEventListener("DOMContentLoaded", async function () {
   const params = new URLSearchParams(window.location.search);
@@ -184,8 +184,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     // Embed Tableau
-    if (p.tableau) {
-      const url = p.tableau;
+    if (p.tableau && typeof p.tableau === "string" && p.tableau.trim().length > 10)  {
+      const url =  p.tableau.trim();
       const containerDiv = document.getElementById("tableauVizContainer");
       const loadingText = document.getElementById("loading-text");
 
@@ -203,11 +203,20 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
       };
 
+       // Dynamically load the Tableau script
+        const script = document.createElement("script");
+        script.src = "https://public.tableau.com/javascripts/api/tableau-2.min.js";
+        script.onload = () => {
       new tableau.Viz(containerDiv, url, options);
-    } else {
-      console.warn("⚠️ No Tableau URL found for this project.");
-      document.getElementById("project-tableau").style.display = "none";
-    }
+      };
+      document.body.appendChild(script);
+      } else {
+        // 👇 Place this right here (inside the same script, after the if)
+        document.getElementById("project-tableau").innerHTML = `
+          <h3>Interactive Dashboard</h3>
+          <p style="color:#888;text-align:center;">No Tableau dashboard available for this project.</p>
+        `;
+      }
   } catch (err) {
     console.error("❌ Error loading project:", err);
     document.getElementById("project-tableau").innerHTML = "<p>Error loading data.</p>";
