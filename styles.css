@@ -197,18 +197,19 @@ footer.site-footer {
   .projects-grid { grid-template-columns: 1fr; }
 }
 
-/* Mobile nav toggle + behavior */
+/* MOBILE: keep nav hidden by default, left-aligned when opened */
 @media (max-width: 640px) {
-  /* Show hamburger button */
+  /* hamburger button */
   #nav-toggle {
     display: inline-block;
     background: none;
     border: 0;
     font-size: 1.25rem;
     color: #fff;
+    cursor: pointer;
   }
 
-  /* Hide nav by default */
+  /* hidden by default */
   #main-nav {
     display: none;
     position: absolute;
@@ -222,12 +223,25 @@ footer.site-footer {
     gap: 8px;
     min-width: 200px;
     z-index: 1100;
+
+    /* IMPORTANT: force left alignment for column items */
+    align-items: flex-start;
+    text-align: left;
   }
 
+  /* anchor styles */
   #main-nav a {
     color: #0b1220;
     display: block;
     margin: 6px 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  /* If you have a larger button inside header (Download CV), keep it left */
+  #main-nav .header-cv-btn {
+    align-self: flex-start;
+    white-space: nowrap;
   }
 
   /* When active (menu open) */
@@ -235,6 +249,7 @@ footer.site-footer {
     display: flex;
   }
 }
+
 
 /* -------------------------
    DESKTOP (optional specificity)

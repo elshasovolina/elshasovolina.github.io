@@ -21,7 +21,44 @@ document.addEventListener("DOMContentLoaded", () => {
   const navToggle = document.getElementById("nav-toggle");
   const mainNav = document.getElementById("main-nav");
 
-  navToggle.addEventListener("click", () => {
-    mainNav.classList.toggle("active");
+  if (!navToggle || !mainNav) return;
+
+  // Toggle menu and update aria-expanded
+  const toggleMenu = () => {
+    const isOpen = mainNav.classList.toggle("active");
+    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  };
+
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent immediate close from document click
+    toggleMenu();
+  });
+
+  // Close when clicking a nav link (good UX on mobile)
+  mainNav.addEventListener("click", (e) => {
+    const target = e.target.closest("a");
+    if (target) {
+      // close the menu after selecting a link
+      mainNav.classList.remove("active");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // Close when clicking outside the nav
+  document.addEventListener("click", (e) => {
+    const clickedInside = e.target.closest("#main-nav") || e.target.closest("#nav-toggle");
+    if (!clickedInside && mainNav.classList.contains("active")) {
+      mainNav.classList.remove("active");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // Accessibility: collapse on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && mainNav.classList.contains("active")) {
+      mainNav.classList.remove("active");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
   });
 });
+
