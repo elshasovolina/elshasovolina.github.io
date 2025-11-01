@@ -40,7 +40,6 @@ body {
   padding: 10px 0;
 }
 
-/* header inner layout */
 .site-header .container {
   display: flex;
   align-items: center;
@@ -55,14 +54,13 @@ body {
   font-weight: 700;
 }
 
-/* nav - default desktop layout */
+/* main nav (desktop default) */
 #main-nav {
   display: flex;
   align-items: center;
   gap: 14px;
 }
 
-/* nav links style */
 #main-nav a {
   color: #fff;
   text-decoration: none;
@@ -75,30 +73,32 @@ body {
   background: rgba(255,255,255,0.06);
 }
 
-/* header Download CV button */
-.site-header .btn {
+/* header Download CV button — desktop */
+.site-header .header-cv-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 8px 12px;
   border-radius: 8px;
-  background: #fff;
-  color: var(--accent);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: var(--accent);
+  color: #fff;
+  border: none;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
   min-width: 110px;
   justify-content: center;
   box-shadow: 0 2px 8px rgba(2,6,23,0.08);
+  transition: background 0.2s ease;
 }
 
-.site-header .btn .icon {
-  font-size: 1.05rem;
-  line-height: 1;
+.site-header .header-cv-btn:hover {
+  background: #0043ce;
 }
 
-/* generic button */
+/* -------------------------
+   GENERIC BUTTON
+   ------------------------- */
 .btn {
   display: inline-block;
   padding: 8px 12px;
@@ -197,9 +197,8 @@ footer.site-footer {
   .projects-grid { grid-template-columns: 1fr; }
 }
 
-/* MOBILE: keep nav hidden by default, left-aligned when opened */
+/* MOBILE NAVIGATION */
 @media (max-width: 640px) {
-  /* hamburger button */
   #nav-toggle {
     display: inline-block;
     background: none;
@@ -209,12 +208,11 @@ footer.site-footer {
     cursor: pointer;
   }
 
-  /* hidden by default */
   #main-nav {
     display: none;
     position: absolute;
     right: 16px;
-    top: 64px; /* below header */
+    top: 64px;
     background: var(--card);
     padding: 12px;
     border-radius: 8px;
@@ -223,13 +221,10 @@ footer.site-footer {
     gap: 8px;
     min-width: 200px;
     z-index: 1100;
-
-    /* IMPORTANT: force left alignment for column items */
     align-items: flex-start;
     text-align: left;
   }
 
-  /* anchor styles */
   #main-nav a {
     color: #0b1220;
     display: block;
@@ -238,30 +233,19 @@ footer.site-footer {
     text-align: left;
   }
 
-  /* If you have a larger button inside header (Download CV), keep it left */
-  #main-nav .header-cv-btn {
-    align-self: flex-start;
-    white-space: nowrap;
-  }
-
   /* When active (menu open) */
   #main-nav.active {
     display: flex;
   }
-}
 
-
-/* -------------------------
-   DESKTOP (optional specificity)
-   ------------------------- */
-@media (min-width: 641px) {
-  #nav-toggle { display: none; }
-
-  #main-nav {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    overflow: visible;
+  /* Mobile version of Download CV button (white) */
+  #main-nav .header-cv-btn {
+    background: #ffffff !important;
+    color: #0f62fe !important;
+    align-self: flex-start;
+    font-weight: 700;
+    border: none;
+    box-shadow: 0 2px 8px rgba(2,6,23,0.08);
   }
 }
 
