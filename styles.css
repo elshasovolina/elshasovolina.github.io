@@ -80,8 +80,8 @@ body {
   gap: 8px;
   padding: 8px 12px;
   border-radius: 8px;
-  background: var(--accent);
-  color: #fff;
+  background: #fff;
+  color: var(--accent); 
   border: none;
   text-decoration: none;
   font-weight: 600;
@@ -94,6 +94,7 @@ body {
 
 .site-header .header-cv-btn:hover {
   background: #0043ce;
+  color: #fff;
 }
 
 /* -------------------------
