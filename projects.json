@@ -24,7 +24,15 @@
   "result": "Found that game releases peak between March–May each year, with most titles rated 'Very Positive' or 'Positive'. Windows dominates platform support, while Linux has minimal coverage. Provided actionable recommendations such as promoting underexposed high-rated games, localizing campaigns by region, and expanding platform availability to reach niche audiences.",
   "pdf": "assets/STEAM.pdf",
   "tableau": "https://public.tableau.com/shared/NGWFKQXH4?:showVizHome=no&embed=true"
+},
+"peopleU": {
+  "title": "PeopleU SaaS Funnel Analysis",
+  "background": "Despite strong lead acquisition, PeopleU experiences significant drop-offs in its sales funnel, limiting Deal Won conversion.",
+  "objective": "Identify funnel bottlenecks and key drivers of low conversion from lead registration to Deal Won.",
+  "methodology": "Applied data cleaning, funnel analysis, and drop-off analysis using SQL (BigQuery) and Tableau.",
+  "result": "Mid-funnel stages (approach–discussion–offer) and “Not Answered” leads were identified as the primary conversion blockers, with CPC as the most efficient acquisition channel.",
+  "pdf": "assets/PeopleU.pdf",
+  "tableau": "https://public.tableau.com/views/des_saasfunnel2/DashboardSaaSFunnel?:showVizHome=no&embed=true"
 }
-
 
 }
