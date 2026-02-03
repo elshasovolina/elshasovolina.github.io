@@ -41,7 +41,7 @@
   "methodology": "Performed cohort analysis using TKB30, delinquency status, and borrower attributes such as income, interest rate, home ownership, and loan purpose.",
   "result": "Found that post-2016 cohorts achieved strong growth with lower delinquency, while risk was concentrated in specific segments rather than the overall portfolio.",
   "pdf": "assets/RevoFin.pdf",
-  "tableau": "https://public.tableau.com/views/des_saasfunnel2/DashboardSaaSFunnel?:showVizHome=no&embed=true"
+  "tableau": "https://public.tableau.com/views/FIP_17670206918430/FIPDashboard?:showVizHome=no&embed=true"
 },
 "VI1": {
   "title": "OCA Indonesia Reporting Deck",
