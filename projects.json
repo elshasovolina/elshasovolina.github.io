@@ -33,6 +33,33 @@
   "result": "Mid-funnel stages (approach–discussion–offer) and “Not Answered” leads were identified as the primary conversion blockers, with CPC as the most efficient acquisition channel.",
   "pdf": "assets/PeopleU.pdf",
   "tableau": "https://public.tableau.com/views/des_saasfunnel2/DashboardSaaSFunnel?:showVizHome=no&embed=true"
+},
+"RevoFin": {
+  "title": "Revofin Financial Loan Analysis",
+  "background": "Loan portfolio performance fluctuated across origination years, requiring deeper analysis to distinguish systemic risk from cohort-specific issues.",
+  "objective": "To assess portfolio health by separating normal and problem loans and identifying key risk drivers across loan cohorts.",
+  "methodology": "Performed cohort analysis using TKB30, delinquency status, and borrower attributes such as income, interest rate, home ownership, and loan purpose.",
+  "result": "Found that post-2016 cohorts achieved strong growth with lower delinquency, while risk was concentrated in specific segments rather than the overall portfolio.",
+  "pdf": "assets/RevoFin.pdf",
+  "tableau": "https://public.tableau.com/views/des_saasfunnel2/DashboardSaaSFunnel?:showVizHome=no&embed=true"
+},
+"VI1": {
+  "title": "OCA Indonesia Reporting Deck",
+  "background": "OCA Indonesia operates multiple communication channels where growing message volume requires centralized visibility to ensure delivery reliability and operational efficiency.",
+  "objective": "To build a unified dashboard that monitors cross-channel performance and supports executive and operational decision-making.",
+  "methodology": "Analyzed multi-channel transaction data using SQL and Tableau to calculate KPIs, delivery rates, time-based patterns, and channel comparisons.",
+  "result": "Delivered an interactive dashboard that identified WhatsApp as the main volume driver, SMS as the most stable channel, and peak-hour operational risks.",
+  "pdf": "assets/VI1.pdf",
+  "tableau": "https://public.tableau.com/views/OCA_17674600596490/Dashboard?:showVizHome=no&embed=true"
+},
+"VI2": {
+  "title": "OCA Indonesia User Behaviour Analysis Analysis",
+  "background": "Uneven user activity across messaging channels created dependency and revenue concentration risks that were not visible at an aggregate level.",
+  "objective": "To understand user-level messaging behavior and identify usage concentration, engagement patterns, and potential churn risks.",
+  "methodology": "Segmented users by message volume, channel usage, and time windows using dynamic filters and behavioral metrics in Tableau.",
+  "result": "Revealed that a small number of high-activity users contributed disproportionately to total volume, highlighting dependency risk and upsell opportunities.",
+  "pdf": "assets/VI2.pdf",
+  "tableau": "https://public.tableau.com/views/OCA_17674600596490/Dashboard?:showVizHome=no&embed=true"
 }
 
 }
