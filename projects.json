@@ -35,7 +35,7 @@
   "tableau": "https://public.tableau.com/views/des_saasfunnel2/DashboardSaaSFunnel?:showVizHome=no&embed=true"
 },
 "RevoFin": {
-  "title": "Revofin Financial Loan Analysis",
+  "title": "RevoFin Loan Portfolio Health & Risk Analysis",
   "background": "Loan portfolio performance fluctuated across origination years, requiring deeper analysis to distinguish systemic risk from cohort-specific issues.",
   "objective": "To assess portfolio health by separating normal and problem loans and identifying key risk drivers across loan cohorts.",
   "methodology": "Performed cohort analysis using TKB30, delinquency status, and borrower attributes such as income, interest rate, home ownership, and loan purpose.",
